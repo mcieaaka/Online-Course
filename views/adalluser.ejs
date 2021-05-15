@@ -1,13 +1,10 @@
 <%- include ('./partials/header.ejs') %>
-<br>
-<br>
-<br>
-<br>
-<div>
+<link rel="stylesheet" href="/stylesheets/adpages.css">
+<div class="ubody">
     <% u.reverse().forEach(function(el){%>
-        <div>
+        <div class="ucard">
             <p>Name: <%=el.username%></p>
-            <a href="/user/<%=el._id%>">More</a>
+            <p><a class="bt" id="suc" href="/user/<%=el._id%>">More</a></p>
         </div>
     <%})%>
 </div>

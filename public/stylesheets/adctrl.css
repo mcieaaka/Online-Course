@@ -42,3 +42,9 @@
     color: black;
     background-color:rgb(202, 99, 233);
 }
+.action{
+    align-items: center;
+    margin: 5%;
+    display: flex;
+    flex-direction:column;
+}

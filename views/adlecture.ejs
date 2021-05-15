@@ -1,32 +1,30 @@
 <%- include ('./partials/header.ejs') %>
 <link rel="stylesheet" href="/stylesheets/adpages.css">
-<br>
-<br>
-<br>
-<br>
-<form action="/admin/addlectures/<%=cid%>" method="post">
-    <table>
-        <tr>
-            <td>Title:</td>
-            <td><input type="text" name="name" required></td>
-        </tr>
-        <tr>
-            <td>Description:</td>
-            <td><input type="text" name="description" required></td>
-        </tr>
-        <tr>
-            <td>Instructor:</td>
-            <td><input type="text" name="inst" required></td>
-        </tr>
-        <tr>
-            <td>Video Link:</td>
-            <td><input type="text" name="link" required></td>
-        </tr>
-        <tr>
-            <td><input type="submit" class="bt" id="suc"></td>
-        </tr>
-    </table>
-</form>
+<div class="cform">
+    <h2>Enter Lecture Details:</h2>
+    <form action="/admin/addlectures/<%=cid%>" method="post">
+        <table>
+            <tr>
+                <td>Title:</td>
+                <td><input type="text" name="name" required></td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td><input type="text" name="description" required></td>
+            </tr>
+            <tr>
+                <td>Instructor:</td>
+                <td><input type="text" name="inst" required></td>
+            </tr>
+            <tr>
+                <td>Video Link:</td>
+                <td><input type="text" name="link" required></td>
+            </tr>
+        </table>
+        <p><input type="submit" class="bt" id="suc"></p>
+    </form>
+</div>
+
 <script>
     var e = document.getElementById("suc");
     e.addEventListener("click", function(){

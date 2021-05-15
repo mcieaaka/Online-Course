@@ -1,10 +1,7 @@
 <%- include ('./partials/header.ejs') %>
 <link rel="stylesheet" href="/stylesheets/adpages.css">
-<br>
-<br>
-<br>
-<br>
-<div>
+<div class="cform">
+    <h2><i>Create a Course</i></h2>
     <form method="post" action="/admin/newcourse">
         <table>
             <tr>
@@ -15,10 +12,8 @@
                 <td>Course Description:</td>
                 <td><textarea name="description" required></textarea></td>
             </tr>
-            <tr>
-                <td><input type="submit" class="bt" id="suc"></td>
-            </tr>
         </table>
+        <p><input type="submit" class="bt" id="suc"></p>
     </form>
 </div>
 <script>

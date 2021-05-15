@@ -1,12 +1,15 @@
 .courses{
     margin: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .course{
-    display: flex;
+    margin:2.5% 5%;
 }
 .fl-card{
     min-width: 300px;
-    height: 300px;
+    height: 250px;
     perspective: 1000px;
     border-radius: 16px;
     margin:3.37%;
@@ -49,16 +52,63 @@
     font-size: large;
     margin: 25%;
 }
+.watch{
+  background:transparent;
+  border:2px solid crimson;
+  color:crimson
+}
+.watch:hover{
+  color:white;
+  background-color:crimson;
+}
 .con{
     margin: 50px 5px;
     padding: 50px;
 }
 .search{
-  float: right;
-}
-.search>button{
-  background-color: white;
+  align-self: center;
+  margin-top:5%;
 }
 .vidren{
   display:none;
+  margin-left: auto;
+  margin-right: auto;
+}
+.profile{
+  margin:10%;
+  padding:10px;
+  border-radius: 16px;
+  align-self: center;
+  box-shadow:5px 5px 5px crimson;
+  background-color:#343d52;
+}
+.bt{
+  text-align: center;
+  color: white;
+  background-color:rgba(255,255,255,0);
+  border-radius:16px;
+  width: 200px;
+  padding: 10px 0px;
+  margin: 20px;
+}
+#suc2{
+  border: rgb(37, 231, 37) 2px solid;
+}
+#suc2:hover{
+  color:black;
+  background-color:rgb(37, 231, 37);
+}
+.viddisp{
+  margin:5% 15%;
+}
+details{
+  margin:10px;
+}
+.des{
+  margin-left: auto;
+  margin-right: auto;
+  width:80%;
+}
+iframe{
+  box-shadow:0 0 5px 5px crimson;
 }

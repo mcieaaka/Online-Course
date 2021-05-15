@@ -1,11 +1,11 @@
 <%- include ('./partials/header.ejs') %>
-<br>
-<br>
-<br>
-<br>
-<div>
+<link rel="stylesheet" href="/stylesheets/adpages.css">
+<div class="lec">
+    <h2><i>Choose a Course to add lectures</i></h2>
     <% c.reverse().forEach((el)=>{%>
-        <p><a href="/admin/addlectures/<%=el._id%>"><%=el.name%></a></p>
+        <div>
+            <p class="bt" id="suc"><a  href="/admin/addlectures/<%=el._id%>"><%=el.name%></a></p>
+        </div>
     <% }); %>
 </div>
 <%- include ('./partials/footer.ejs') %>

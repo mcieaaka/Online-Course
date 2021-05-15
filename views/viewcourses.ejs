@@ -1,8 +1,13 @@
 <%- include('./partials/header.ejs') %>
 <link rel="stylesheet" href="/stylesheets/views.css">
+<div class="search">
+    <input type="text" id="search-bar" placeholder="Search By Course Name"> 
+    <button class="watch" onclick="finder()">Search</button>
+    <p id="results"></p>
+</div>
 <div class="courses">
     <% c.forEach((el)=>{ %>
-        <div class="course">
+        <div class="course" id="<%=el.name%>">
             <div class="fl-card">
                 <div class="inner">
                     <div class="infr">
@@ -10,12 +15,12 @@
                     </div>
                     <div class="inbk">
                         <p><%=el.description%></p>
-                        <a href="/view/<%=el._id%>">More</a>
-
+                        <a class="bt" id="suc2" href="/view/<%=el._id%>">More</a>
                     </div>
                 </div>
             </div>
         </div>
     <% }) %>
 </div>
+<script type="text/javascript" src="/stylesheets/videorender.js"></script>
 <%- include('./partials/footer.ejs') %>

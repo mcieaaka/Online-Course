@@ -1,20 +1,21 @@
 <%-include('./partials/header')%>
 <link rel="stylesheet" href="/stylesheets/views.css">
-<br>
-<br>
-<br>
-<br>
-<div>
-    <p><%=co.name%></p>
+<div class="viddisp">
+    <h2><i><%=co.name%></i></h2>
     <p><%=co.description%></p>
+    <h3><i>Course Content:</i></h3>
     <% for(i=0;i<co.lectures.length;i++){%>
         <details>
             <summary><%=co.lectures[i].name%></summary>
-            <p><button onclick="render('<%=i%>')">Watch!</button><%=co.lectures[i].description%></p>
+            <p class="des">
+                Instructor: <%=co.lectures[i].inst%><br>
+                <%=co.lectures[i].description%><br>
+                <button class="watch" onclick="render('<%=i%>')">Watch!</button>
+            </p>
+            <div class="vidren" id="<%=i%>">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/<%=co.lectures[i].link.split('/')[3]%>" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </details>
-        <div class="vidren" id="<%=i%>">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/<%=co.lectures[i].link.split('/')[3]%>" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
     <% } %>
     <script type="text/javascript" src="/stylesheets/videorender.js"></script>
 </div>
