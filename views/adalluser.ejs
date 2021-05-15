@@ -1,0 +1,14 @@
+<%- include ('./partials/header.ejs') %>
+<br>
+<br>
+<br>
+<br>
+<div>
+    <% u.reverse().forEach(function(el){%>
+        <div>
+            <p>Name: <%=el.username%></p>
+            <a href="/user/<%=el._id%>">More</a>
+        </div>
+    <%})%>
+</div>
+<%- include ('./partials/footer.ejs') %>

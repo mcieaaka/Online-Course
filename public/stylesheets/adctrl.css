@@ -1,0 +1,44 @@
+.bt{
+    text-align: center;
+    color: white;
+    background-color:rgba(255,255,255,0);
+    border-radius:16px;
+    width: 200px;
+    padding: 10px 0px;
+    margin: 20px;
+}
+#suc{
+    border: rgb(37, 231, 37) 2px solid;
+}
+#suc:hover{
+    color:black;
+    background-color:rgb(37, 231, 37);
+}
+#del{
+    border: 2px solid red;
+}
+#del:hover{
+    color:black;
+    background-color:red;
+}
+#info{
+    border: 2px solid lightskyblue;
+}
+#info:hover{
+    color:black;
+    background-color:lightskyblue;
+}
+#warn{
+    border: 2px solid yellow;
+}
+#warn:hover{
+    color: black;
+    background-color:yellow;
+}
+#mesg{
+    border: 2px solid rgb(202, 99, 233);
+}
+#mesg:hover{
+    color: black;
+    background-color:rgb(202, 99, 233);
+}

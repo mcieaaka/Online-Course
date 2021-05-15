@@ -1,0 +1,11 @@
+<%- include ('./partials/header.ejs') %>
+<br>
+<br>
+<br>
+<br>
+<div>
+    <% c.reverse().forEach((el)=>{%>
+        <p><a href="/admin/addlectures/<%=el._id%>"><%=el.name%></a></p>
+    <% }); %>
+</div>
+<%- include ('./partials/footer.ejs') %>

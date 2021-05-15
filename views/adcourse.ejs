@@ -1,0 +1,30 @@
+<%- include ('./partials/header.ejs') %>
+<link rel="stylesheet" href="/stylesheets/adpages.css">
+<br>
+<br>
+<br>
+<br>
+<div>
+    <form method="post" action="/admin/newcourse">
+        <table>
+            <tr>
+                <td>Course Name:</td>
+                <td><input type="text" name="name" required></td>
+            </tr>
+            <tr>
+                <td>Course Description:</td>
+                <td><textarea name="description" required></textarea></td>
+            </tr>
+            <tr>
+                <td><input type="submit" class="bt" id="suc"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script>
+    var e = document.getElementById("suc");
+    e.addEventListener("click", function(){
+        confirm("Are you Sure? No changes can be done in the future.")
+    })
+</script>
+<%- include ('./partials/footer.ejs') %>

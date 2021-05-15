@@ -1,0 +1,27 @@
+<%- include('partials/header') %>
+<div>
+    <h1>Profile</h1>
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><%=u.username%></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><%=u.email%></td>
+        </tr>
+        <tr>
+            <td>Instagram Id:</td>
+            <td><%=u.insta%></td>
+        </tr>
+        <tr>
+            <td>Bio:</td>
+            <td><pre><%=u.bio%></pre></td>
+        </tr>
+        <tr>
+            <td>Joined:</td>
+            <td><%=u.created.toDateString()%></td>
+        </tr>
+    </table>
+</div>
+<%- include('partials/footer') %>

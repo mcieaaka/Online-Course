@@ -1,0 +1,21 @@
+<%-include('./partials/header')%>
+<link rel="stylesheet" href="/stylesheets/views.css">
+<br>
+<br>
+<br>
+<br>
+<div>
+    <p><%=co.name%></p>
+    <p><%=co.description%></p>
+    <% for(i=0;i<co.lectures.length;i++){%>
+        <details>
+            <summary><%=co.lectures[i].name%></summary>
+            <p><button onclick="render('<%=i%>')">Watch!</button><%=co.lectures[i].description%></p>
+        </details>
+        <div class="vidren" id="<%=i%>">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/<%=co.lectures[i].link.split('/')[3]%>" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    <% } %>
+    <script type="text/javascript" src="/stylesheets/videorender.js"></script>
+</div>
+<%-include('./partials/footer')%>

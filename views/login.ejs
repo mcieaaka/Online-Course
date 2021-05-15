@@ -1,0 +1,22 @@
+<%- include ('./partials/header.ejs') %>
+<link rel="stylesheet" href="/stylesheets/forms.css">
+<div class="login">
+    <h1 style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;"><i>Log In!</i></h1>
+    <form action="/login" method="post">
+    <table class="stb">
+        <tr>
+            <td class="lb">User Name:</td>
+            <td class="in"><input type="text" name="username" required></td>
+        </tr>
+        <tr>
+            <td class="lb">Password:</td>
+            <td class="in"><input type="password" name="password" required></td>
+        </tr>
+        <tr>
+            <td><input class="bt bt-sub" type="submit"></td>
+            <td class="in"><input class="bt bt-sub" type="reset"></td>
+        </tr>
+    </table>
+</form>
+</div>
+<%- include ('./partials/footer.ejs') %>

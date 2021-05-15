@@ -1,0 +1,16 @@
+<%- include ('./partials/header.ejs') %>
+<br>
+<br>
+<br>
+<br>
+<div>
+    <% m.reverse().forEach(function(el){%>
+        <div>
+            <p>Name: <%=el.name%></p>
+            <p>Email: <%=el.email%></p>
+            <p>Message: <%=el.mesg%></p>
+            <p><%=el.created.toDateString()%></p>
+        </div>
+    <%})%>
+</div>
+<%- include ('./partials/footer.ejs') %>

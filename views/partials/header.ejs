@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+        <nav>
+            <div class="nav-body">
+                <div class="nav-logo">
+                    <a href="/"><img src="/assets/15465856831547464152.svg" width="40px"></a>
+                </div>
+                <div class="nav-items">
+                    <%if(!currUser){%>
+                        <div class="nav-link"><a href="#course">COURSES</a></div>
+                        <div class="nav-link"><a href="#create">CREATOR</a></div>
+                        <div class="nav-link"><a href="#cont">CONTACT</a></div>
+                        <div class="nav-link"><a href="/signup">SIGNUP </a></div>
+                        <div class="nav-link"><a href="/login">LOGIN  </a></div>
+                    <%}else if(currUser.username=="ADMIN"){%>
+                        <div class="nav-link"><a href="/admin">ADMIN CONTROL</a></div>
+                        <div class="nav-link"><a href="/viewall">COURSES</a></div>
+                        <div class="nav-link"><a href="/user/<%=currUser._id%>">PROFILE</a></div>
+                        <div class="nav-link"><a href="/logout">LOGOUT</a></div>
+                    <%}else{%>
+                        <div class="nav-link"><a href="/viewall">COURSES</a></div>
+                        <div class="nav-link"><a href="/user/<%=currUser._id%>">PROFILE</a></div>
+                        <div class="nav-link"><a href="/logout">LOGOUT</a></div>
+                    <%}%>
+                </div>
+            </div>
+        </nav>

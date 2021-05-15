@@ -1,0 +1,36 @@
+<%- include ('./partials/header.ejs') %>
+<link rel="stylesheet" href="/stylesheets/adpages.css">
+<br>
+<br>
+<br>
+<br>
+<form action="/admin/addlectures/<%=cid%>" method="post">
+    <table>
+        <tr>
+            <td>Title:</td>
+            <td><input type="text" name="name" required></td>
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td><input type="text" name="description" required></td>
+        </tr>
+        <tr>
+            <td>Instructor:</td>
+            <td><input type="text" name="inst" required></td>
+        </tr>
+        <tr>
+            <td>Video Link:</td>
+            <td><input type="text" name="link" required></td>
+        </tr>
+        <tr>
+            <td><input type="submit" class="bt" id="suc"></td>
+        </tr>
+    </table>
+</form>
+<script>
+    var e = document.getElementById("suc");
+    e.addEventListener("click", function(){
+        confirm("Are you Sure? No changes can be done in the future.")
+    })
+</script>
+<%- include ('./partials/footer.ejs') %>

@@ -1,0 +1,21 @@
+<%- include('./partials/header.ejs') %>
+<link rel="stylesheet" href="/stylesheets/views.css">
+<div class="courses">
+    <% c.forEach((el)=>{ %>
+        <div class="course">
+            <div class="fl-card">
+                <div class="inner">
+                    <div class="infr">
+                        <h1><%=el.name%></h1>
+                    </div>
+                    <div class="inbk">
+                        <p><%=el.description%></p>
+                        <a href="/view/<%=el._id%>">More</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+</div>
+<%- include('./partials/footer.ejs') %>

@@ -1,0 +1,35 @@
+<%- include('./partials/header.ejs') %>
+<link rel="stylesheet" href="stylesheets/forms.css">
+<div class="signup">
+    <h1 style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;"><i>Sign Up!</i></h1>
+    <form action="/signup" method="post">
+    <table class="stb">
+        <tr>
+            <td class="lb">User Name:</td>
+            <td class="in"><input type="text" name="username" required></td>
+        </tr>
+        <tr>
+            <td class="lb">Password:</td>
+            <td class="in"><input type="password" name="password" required></td>
+        </tr>
+        <tr>
+            <td class="lb">Email:</td>
+            <td class="in"><input type="email" name="email" required></td>
+        </tr>
+        <tr>
+            <td class="lb">Instagram:</td>
+            <td class="in"><input type="text" name="insta" required></td>
+        </tr>
+        <tr>
+            <td class="lb">Bio:</td>
+            <td class="in"><textarea name="bio" required></textarea></td>
+        </tr>
+        <tr>
+            <td><input class="bt bt-sub" type="submit"></td>
+            <td class="in"><input class="bt bt-sub" type="reset"></td>
+        </tr>
+    </table>
+    </form>
+</div>
+
+<%- include('./partials/footer.ejs') %>
