@@ -106,6 +106,24 @@ app.get("/admin/messages",isLoggedIn,async(req,res)=>{
     }else{
         res.send("<h1>PLEASE LOGIN AS ADMIN</h1>")
     }
+});
+//Delete Course:
+app.get("/admin/delete",isLoggedIn,async(req,res)=>{
+    if(req.user.username=="ADMIN"){
+        const c = await course.find({});
+        res.render("coursedel",{c});
+    }else{
+        res.send("<h1>PLEASE LOGIN AS ADMIN</h1>")
+    }
+})
+app.delete("/admin/delete/:id",(req,res)=>{
+    course.findOneAndDelete({_id:req.params.id},function(err,rc){
+        if(err){
+            console.log(err);
+        }else{
+            res.redirect("/admin")
+        }
+    })
 })
 //View Users
 app.get("/admin/allusers",isLoggedIn,async(req,res)=>{

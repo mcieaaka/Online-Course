@@ -1,0 +1,13 @@
+<%- include ('./partials/header.ejs') %>
+<link rel="stylesheet" href="/stylesheets/adpages.css">
+<div class="lec">
+    <h2><i>Choose a Course to Delete</i></h2>
+    <% c.reverse().forEach((el)=>{%>
+        <div>
+            <form action="/admin/delete/<%=el._id%>?_method=delete" method="post">
+                <button class="bt" id="suc" type="submit" onclick="return confirm('Are you sure? Changes can not be reversed.')"><%=el.name%></button>
+            </form>
+        </div>
+    <% }); %>
+</div>
+<%- include ('./partials/footer.ejs') %>
