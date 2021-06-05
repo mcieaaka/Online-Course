@@ -1,6 +1,8 @@
 var mongoose = require("mongoose");
 var passportLocalMongoose = require("passport-local-mongoose");
 var passport = require("passport");
+const multer = require("multer");
+const upload = multer({dest:'/uploads'});
 
 var userSchema= new mongoose.Schema({
     email: {type:String,
@@ -8,7 +10,8 @@ var userSchema= new mongoose.Schema({
     },
     insta: String,
     bio: String,
-    created:{type:Date , default:Date.now}
+    created:{type:Date , default:Date.now},
+    userimage:{type:String, required:true}
 });
 userSchema.plugin(passportLocalMongoose);
 

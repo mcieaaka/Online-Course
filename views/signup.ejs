@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="stylesheets/forms.css">
 <div class="signup">
     <h1 style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;"><i>Sign Up!</i></h1>
-    <form action="/signup" method="post">
+    <form action="/signup" method="post" enctype="multipart/form-data">
     <table class="stb">
         <tr>
             <td class="lb">User Name:</td>
@@ -23,6 +23,10 @@
         <tr>
             <td class="lb">Bio:</td>
             <td class="in"><textarea name="bio" required></textarea></td>
+        </tr>
+        <tr>
+            <td class="lb">Image:</td>
+            <td class="in"><input type="file" name="userimage" required></td>
         </tr>
         <tr>
             <td><input class="bt bt-sub" type="submit"></td>

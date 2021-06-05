@@ -10,6 +10,34 @@ var express        = require("express"),
     methodOverride = require("method-override"),
     message        = require("./models/message");
 
+app.use('/uploads', express.static('uploads'));
+const multer = require("multer");
+const storage = multer.diskStorage({
+    destination:function(req, file,cb){
+        cb(null,'./uploads');
+    },
+    filename: function(req, file,cb){
+        const fileName = file.originalname.toLowerCase().split(' ').join('-');
+        cb(null, fileName)
+    }
+})
+
+const fileFilter=(req,file,cb)=>{
+    if(file.mimetype==='image/jpeg'|| file.mimetype == "image/jpg" ||file.mimetype==='image/png'){
+        cb(null,true);
+    }else{
+        cb(null,false);
+    }
+}
+
+const upload = multer({
+    storage:storage,
+    limits:{
+        fileSize:1024*1024
+    },
+    fileFilter:fileFilter
+});
+
 mongoose.connect("mongodb://localhost/iwpproj",{ useNewUrlParser: true, useUnifiedTopology: true });
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended:true}));
@@ -175,11 +203,13 @@ app.get("/view/:cid",isLoggedIn,(req,res)=>{
 app.get("/signup",function(req,res){
     res.render("signup");
 });
-app.post("/signup",async(req,res)=>{
+app.post("/signup",upload.single('userimage'),(req,res)=>{
     try{
+        console.log(req.file);
         var {username,password,email,insta,bio}= req.body;
-        const usep = new user({username,email,insta,bio});
-        const reguser = await user.register(usep,password,(err,u)=>{
+        var userimage = req.file.path;
+        const usep = new user({username,email,insta,bio,userimage});
+        const reguser = user.register(usep,password,(err,u)=>{
             if(err){
                 console.log(err);
             }else{

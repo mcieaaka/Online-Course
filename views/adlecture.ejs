@@ -21,14 +21,13 @@
                 <td><input type="text" name="link" required></td>
             </tr>
         </table>
-        <p><input type="submit" class="bt" id="suc"></p>
+        <p><input onclick="return check()" type="submit" class="bt" id="suc"></p>
     </form>
 </div>
 
 <script>
-    var e = document.getElementById("suc");
-    e.addEventListener("click", function(){
-        confirm("Are you Sure? No changes can be done in the future.")
-    })
+ function check(){
+        return confirm("Are you Sure? No changes can be done in the future.")
+    }
 </script>
 <%- include ('./partials/footer.ejs') %>
