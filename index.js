@@ -38,7 +38,7 @@ const upload = multer({
     fileFilter:fileFilter
 });
 
-mongoose.connect("mongodb://localhost/iwpproj",{ useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb://localhost/iwpproj",{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify:false });
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 
@@ -236,6 +236,32 @@ app.post("/signup",upload.single('userimage'),(req,res)=>{
             })
             }
         });
+    }catch(e){
+        console.log("Error:",e.message);
+        res.redirect("/signup");
+    }
+    
+});
+app.get("/edit/:uid",async(req,res)=>{
+    var ue = await user.findById(req.params.uid);
+    if(ue.username==req.user.username){
+        res.render("editprofile",{ue});
+    }else{
+        res.send("<h1>Log in as"+ue.username+"</h1>");
+    }
+})
+app.patch("/edit/:id",isLoggedIn,upload.single('userimage'),(req,res)=>{
+    try{
+        var {email,insta,bio}= req.body;
+        var userimage = req.file.path;
+        const usep = {email,insta,bio,userimage};
+        user.findOneAndUpdate({_id:req.params.id},usep,(err,edu)=>{
+            if(err){
+                console.log(err);
+            }else{
+                res.redirect("/user/"+req.params.id);
+            }
+        })
     }catch(e){
         console.log("Error:",e.message);
         res.redirect("/signup");

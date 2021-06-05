@@ -2,7 +2,11 @@
 <link rel="stylesheet" href="/stylesheets/views.css">
 <div class="profile">
     <h1><i>Profile</i></h1>
+    <% if(currUser.username==u.username){%>
+        <a style="margin:5px;" class="edit-bt" href="/edit/<%=u._id%>">Edit</a>
+    <%}%>
     <img src="\<%=u.userimage%>" alt="" width="100">
+    
     <table>
         <tr>
             <td>Name:</td>
@@ -26,4 +30,5 @@
         </tr>
     </table>
 </div>
+
 <%- include('partials/footer') %>

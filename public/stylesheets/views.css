@@ -112,3 +112,11 @@ details{
 iframe{
   box-shadow:0 0 5px 5px crimson;
 }
+.edit-bt{
+  border:2px solid crimson;
+  padding: 5px 10px;
+  float:right;
+}
+.edit-bt:hover{
+  background-color:crimson;
+}
