@@ -38,7 +38,7 @@ const upload = multer({
     fileFilter:fileFilter
 });
 
-mongoose.connect("mongodb://localhost/iwpproj",{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify:false });
+mongoose.connect("mongodb+srv://Harshit1:demopass@democluster1.zud1e.mongodb.net/DemoCluster1?retryWrites=true&w=majority",{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify:false });
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 
