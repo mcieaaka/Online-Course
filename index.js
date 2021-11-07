@@ -9,7 +9,7 @@ var express        = require("express"),
     lecture        = require("./models/lecture"),
     methodOverride = require("method-override"),
     message        = require("./models/message");
-
+//THIS IS INDEX from change_index BRANCH
 app.use('/uploads', express.static('uploads'));
 const multer = require("multer");
 const storage = multer.diskStorage({
